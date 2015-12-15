@@ -66,6 +66,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\040113workingtogether.jpg" />
+    <Content Include="fonts\1648100.jpg" />
+    <Content Include="fonts\225086b.png" />
+    <Content Include="fonts\slider-img3.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Web.Debug.config">
