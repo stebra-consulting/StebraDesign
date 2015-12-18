@@ -7,6 +7,15 @@
     <link href="Content/Site.css" rel="stylesheet" />
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <header id="grad" class="hidden-xs" <!--style="background-image: url('fonts/225086b.png'); background-attachment: fixed; background-position: center center; background-repeat: no-repeat; background-size: cover; min-height: 224px;-->">
         <div class="container" style="padding-top:5px;padding-bottom:5px">
             <img src="fonts/stebra_logo_black.png" width="190" height="80" />
@@ -122,56 +131,10 @@
     <section style="background-image: url('fonts/slider-img3.png'); background-attachment:fixed; background-position:center center; background-repeat:no-repeat; background-size:cover; min-height:500px;">
     </section>
 
-    <section id="home-areas">
+    <section>
         <div class="container">
-            <div class="col-sm-4 col-xs-12">
-                <a href="#">
-                    <img src="fonts/bild1.jpg" width="338" height="338" class="img-responsive" />
-                    <img src="fonts/tint.png" width="338" height="338" class="tint hidden-xs" />
-                </a>
-            </div>
-
-            <div class="col-sm-4 col-xs-12">
-                <a href="#">
-                    <img src="fonts/bild2.jpg" width="338" height="338" class="img-responsive" />
-                    <img src="fonts/tint.png" width="338" height="338" class="tint hidden-xs" />
-                </a>
-            </div>
-
-            <div class="col-sm-4 col-xs-12">
-                <a href="#">
-                    <img src="fonts/bild3.png" width="338" height="338" class="img-responsive" />
-                    <img src="fonts/tint.png" width="338" height="338" class="tint hidden-xs" />
-                </a>
-            </div>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
-            <h1>Random Stuff</h1>
+            <img src="fonts/bertil.jpg" />
+            <img src="fonts/hasselito.jpg" />
         </div>
     </section>
 
@@ -239,6 +202,7 @@
     <footer id="grad3">
         <div class="container" style="padding-top:5px;padding-bottom:5px">
             <img src="fonts/stebra_logo_black.png" width="190" height="80" />
+            <div class="fb-like" data-href="https://www.facebook.com/stebraconsulting/" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
         </div>
     </footer>
     <script src="Scripts/jquery-2.1.4.js"></script>
@@ -261,6 +225,36 @@
         });
 
         $('.carousel').carousel();
+
+
+        jQuery(document).ready(function ($) {
+            // browser window scroll (in pixels) after which the "back to top" link is shown
+            var offset = 300,
+                //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+                offset_opacity = 1200,
+                //duration of the top scrolling animation (in ms)
+                scroll_top_duration = 700,
+                //grab the "back to top" link
+                $back_to_top = $('.cd-top');
+
+            //hide or show the "back to top" link
+            $(window).scroll(function () {
+                ($(this).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+                if ($(this).scrollTop() > offset_opacity) {
+                    $back_to_top.addClass('cd-fade-out');
+                }
+            });
+
+            //smooth scroll to top
+            $back_to_top.on('click', function (event) {
+                event.preventDefault();
+                $('body,html').animate({
+                    scrollTop: 0,
+                }, scroll_top_duration
+                );
+            });
+
+        });
     </script>
 </body>
 </html>
